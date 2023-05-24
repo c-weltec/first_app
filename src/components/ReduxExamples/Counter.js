@@ -17,6 +17,7 @@ const Counter = () => {
     <center style={{ marginTop: "40vh" }}>
       <button onClick={subtract}>-</button> Counter value:{" "}
       {counterSlice.counterValue} <button onClick={add}>+</button>
+      {counterSlice.loading && <div>Loading...</div>}
     </center>
   );
 };

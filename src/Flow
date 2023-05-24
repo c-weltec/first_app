@@ -1,0 +1,8 @@
+
+
+Event -> Action dispatch -> Reducers call -> Store update -> Updated value reflects
+
+Event -> Action dispatch -> Redux watcher saga -> Redux worker saga -> Action dispatch -> Reducers call -> Store update -> Updated value reflects
+                        |
+                        V
+                Reducers call -> Store update -> Value reflects

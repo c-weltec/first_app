@@ -1,8 +1,12 @@
-import { createStore, combineReducers } from "redux";
+import { createStore, combineReducers, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { counterReducer } from "./reducers/counterReducer";
+import createSagaMiddleware from "redux-saga";
 
-const composedEnhancer = composeWithDevTools();
+import rootSaga from "./sagas";
+const sagaMiddleware = createSagaMiddleware();
+
+const composedEnhancer = composeWithDevTools(applyMiddleware(sagaMiddleware));
 //   applyMiddleware(thunkMiddleware)
 // other store enhancers if any
 
@@ -13,3 +17,5 @@ const store = createStore(
   composedEnhancer
 );
 export default store;
+
+sagaMiddleware.run(rootSaga);
