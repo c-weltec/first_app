@@ -4,6 +4,7 @@ import { counterReducer } from "./reducers/counterReducer";
 import createSagaMiddleware from "redux-saga";
 
 import rootSaga from "./sagas";
+import { usersReducer } from "./reducers/usersReducer";
 const sagaMiddleware = createSagaMiddleware();
 
 const composedEnhancer = composeWithDevTools(applyMiddleware(sagaMiddleware));
@@ -13,6 +14,7 @@ const composedEnhancer = composeWithDevTools(applyMiddleware(sagaMiddleware));
 const store = createStore(
   combineReducers({
     counter: counterReducer,
+    users: usersReducer,
   }),
   composedEnhancer
 );
