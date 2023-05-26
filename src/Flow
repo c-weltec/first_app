@@ -1,4 +1,5 @@
 
+Event -> Event handler -> setState() -> Updated state reflects
 
 Event -> Action dispatch -> Reducers call -> Store update -> Updated value reflects
 
